@@ -39,20 +39,20 @@ model = keras.models.load_model(current_file)
 @app.route('/api/check', methods = ['POST'])
 def check():        
     if 'image' not in request.files:
-        return json.dumps({"error": "No image provided"}), 200
+        return json.dumps({"error": "Aucune image fournie"}), 200
     image = imread(request.files['image'], mode='RGB')
     width, height, channels = image.shape
     if not channels == 3:
-        return json.dumps({"error": "Image is invalid."}), 200
+        return json.dumps({"error": "Image invalid."}), 200
     if width > 1024 or height > 1024:
-        return json.dumps({"error": "Image is too large!"}), 200
+        return json.dumps({"error": "Image trop grande!"}), 200
     if not (width == 32 and height == 32):
         image = imresize(image, (32, 32))
 
     CLASSES = ['Mr. Airplane', 'Ms. Automobile', 'Ms. Bird', 'Mr. Cat', 
     'Mr. Deer [VIP]', 'Mr. Dog', 'Mr. Frog', 'Mrs. Horse', 'Mrs. Ship', 'Ms. Truck']
     SECRETS = ['VROOM VROOM AIRPLANE SECRET', 'SKRRT SKRRT I AM A CAR', 'TWEET TWEET TWEET', 'MEOWWWW',
-    'Why are all these users so degenerate? I actually have something intelligent to store: utflag{n3ur4l_n3t_s3cur1ty_b4d_p4d1ct4b1l1ty}',
+    'Pourquoi tous ces utilisateurs sont-ils si degeneres ? J\'ai en fait quelque chose d\'intelligent a stocker : utflag{n3ur4l_n3t_s3cur1ty_b4d_p4d1ct4b1l1ty}',
     "WOOF WOOF ARF ARF ARF", "RIBBBBBBITTTT", "NEIGGGHHHH", "HONK HONK", "VROOM VROOM"]
     index = int(model.predict_classes(np.array([image]), verbose=0)[0])
     prediction = CLASSES[index]

@@ -7,15 +7,15 @@
 <div class="wrapper">
 
 	<div class="title-container">
-		<h1 class="title">FaceSafe</h1>
-		<h2 class="subtitle">The world's most elegant authentication platform</h2>
+		<h1 class="title">Apple FaceID verificator</h1>
+		<h2 class="subtitle">The world's most expensive authentication platform</h2>
 	</div>
 
 	<div class="info-container">
 
-		<p>FaceSafe (BETA) is a secret-keeping platform that uses state-of-the-art AI to authenticate you. FaceSafe lets you store text secrets and gain access to them just based off of your picture!</p>
+		<p>Face ID (BETA) vous permet, en toute sécurité, de déverrouiller votre iPhone ou iPad, d’authentifier des achats, de vous connecter à des apps, et bien plus encore, le tout d’un simple regard.</p>
 
-		<p>Current users of FaceSafe (bold indicates VIP user):</p>
+		<p>Utilisateurs actuels de FaceID:</p>
 		<ul>
 			<li>Mr. Airplane</li>
 			<li>Ms. Automobile</li>
@@ -29,22 +29,26 @@
 			<li>Ms. Truck</li>
 		</ul>
 
-		<p>Support for more users will be added soon!</p>
+		<p>L'application permettra bientot d'avoir plus d'utilisateur !</p>
 
 	</div>
+	<div class="card">
+		<div class="card-body">
+			<div class="info-prompt">
 
-	<div class="info-prompt">
+				<p><b>Connexion:</b></p>
+				<p>Inserer une image de vous pour vous connectez</p>
+				<input class="btn btn-dark" id="image-upload" type="file" accept="image/*"/>
 
-		<p>Current users: In order to gain access to your secret text, just upload a photo of yourself:</p>
-		<input id="image-upload" type="file" accept="image/*"/>
-
+			</div>
+		</div>
 	</div>
 
 	<div class="secret-display">
 
 		<div id="authenticated-secret" style="visibility: hidden;">
 			<p id="greeting"></p>
-			<p>Here is the secret you stored:</p>
+			<p>Voici le secret que vous avez enregistré:</p>
 			<p id="secret"></p>
 		</div>
 	</div>

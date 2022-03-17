@@ -1,10 +1,10 @@
 p, h1, h2, li, input {
 	font-family: Roboto;
-	color: #E0E0E0;
+	color: black;
 }
 
 body {
-	background-color: #283593;
+	background-color: #FFFFFF;
 }
 
 .wrapper {

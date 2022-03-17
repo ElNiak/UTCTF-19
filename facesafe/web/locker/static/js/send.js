@@ -1,4 +1,5 @@
 $(document).ready(function(){
+  // TODO: Make Christophe a god
   $("#image-upload").change(function () {
       console.log("Sending image over...");
       // Read the input image
@@ -18,7 +19,7 @@ $(document).ready(function(){
             success: function(result) {
               result = JSON.parse(result);
               console.log(result);
-              $("#greeting").html("FaceSafe identified you as " + result["user"] + ". Welcome, " + result["user"] + "!");
+              $("#greeting").html("FaceID vous identifie comme " + result["user"] + ". <br> Bienvenue, " + result["user"] + "!");
               $("#secret").html(result["secret"]);
               $("#authenticated-secret").css("visibility", "visible");
             }
